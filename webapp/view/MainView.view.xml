@@ -1,0 +1,29 @@
+<mvc:View controllerName="invoices.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Shell id="shell">
+        <app id="applist">
+            
+            <Page id="page" title="{i18n>title}">
+                <content>
+                    <Panel id="panelItem" headerText="{i18n>selectionScreen}">
+                        <Label id="labelShipName" text="{i18n>selectionScreen}" class="sapUiSmallMargin"/>
+                        <Input id="shipName" width="200px" class="sapUiSmallMarginEnd"/>
+                        <Label id="labelCountry" text="{i18n>country}" class="sapUiSmallMargin"/>
+                        <Select id="slCountry" 
+                            selectedKey="{selectionScreen>/CountryKey}" 
+                            forceSelection="false"
+                            items="{selectionScreen>/Countries}">
+                            <items>
+                                <core:Item id="idITem" key="{selectionScreen>key}" text="{selectionScreen>text}"/>
+                            </items>
+                        </Select>
+                    </Panel>
+                </content>
+            </Page>
+
+        </app>
+    </Shell>
+</mvc:View>
